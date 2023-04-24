@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Home
+    </title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,1,200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200" />
+    <style>
+        #insta {
+            height: 40px;
+            width: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="grid-container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a class="act" href="#">Home</a></li>
+                    <li><a href="#">Blog </a></li>
+                    <li><a href="index-2.html">About</a></li>
+                    <li><a href="index-3.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <aside>
+            <div class="toggle-aside">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <h2>Quick Links</h2>
+
+
+            <ul>
+                <a href="index-4.html">
+                    <li><span class="material-symbols-outlined">
+                            school
+                        </span>&nbsp;&nbsp;Education</li>
+                </a>
+                <br><br><br><br>
+                
+                <a href="index-5.html">
+                    <li><span class="material-symbols-outlined">
+                            code
+                        </span>&nbsp;&nbsp;Projects</li>
+                </a><br><br><br><br>
+
+
+                <a href="index-6.html">
+                    <li><span class="material-symbols-outlined">
+                        gallery_thumbnail
+                        </span>&nbsp;&nbsp;Gallery</li>
+                </a>
+            </ul>
+
+
+        </aside>
+        <main>
+            <div class="profile">
+                <div class="circle">
+                    <img src="WhatsApp_Image_2023-02-04_at_4.14.10_PM-removebg-preview.png" class="hidden"
+                        id="floating-image" alt="Sushanth">
+
+                </div>
+
+            </div>
+            <br>
+
+
+            <div class="introduction">
+                <h2 class="name"> Hi there! I'm </h2>
+                <h1 class="name">Sushanth</h1><br>
+                <p><b>A</b> computer science student studying at <b> <a class="bms" href="https://bmsce.ac.in/" target="_blank
+                ">BMS College in Bangalore</a></b>. Currently in my 3rd semester, I have been passionate about
+                    <b><i>web development</i></b> for the past 4 years, and have gained considerable experience in this
+                    field.
+                    <br><br>
+                    With a focus on innovative problem-solving, I am driven to create user-friendly and visually
+                    appealing websites that engage audiences and enhance online experiences. Through my work in web
+                    development, I have honed my skills in Programming, and am always seeking new challenges to further
+                    develop my expertise.
+                    <br> <br>I am excited to continue exploring the ever-evolving world of web development and applying
+                    my knowledge to create impactful digital solutions.
+                </p>
+            </div>
+
+
+            <div id="mode">
+                <img src="moon.png" title="Toggle mode" id="icon" onclick="toggleDarkMode()" alt="moon">
+            </div>
+        </main>
+        <footer>
+            <div class="footer-container">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/your-instagram-account"><img id="insta" src="instagram.png"
+                            alt="Instagram"></a>
+                    <a href="mailto:your-email-address"><img src="mail.png" alt="Gmail"></a>
+                    <a href="https://www.twitter.com/your-twitter-account"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="tel:+1234567890"><img src="phone.png" alt="Phone"></a>
+                    <a href="linkededdd"><img src="linkedin.png" alt="linkedin"></a>
+                </div><br>
+
+            </div>
+            <p>&copy; <b>Sushanth_portfolio.com</b>. All rights reserved.</p>
+        </footer>
+        <!-- no need -->
+        <!--     
+      <script>
+        var  icon =document.getElementById("icon");
+        icon.onclick=function(){
+            document.body.classList.toggle("dark-theme");
+            if(document.body.classList.contains("dark-theme")){
+                icon.src="sun.png";
+            }
+            else{
+                icon.src="moon.png";
+            }
+        }
+    </script> -->
+
+
+
+
+        <script>
+            function toggleDarkMode() {
+                const body = document.querySelector('body');
+                const toggle = document.querySelector('#icon');
+
+                body.classList.toggle('dark-theme');
+
+                if (body.classList.contains('dark-theme')) {
+                    toggle.src = 'sun.png';
+                } else {
+                    toggle.src = 'moon.png';
+                }
+
+                // Store the user's preference in localStorage
+                localStorage.setItem('dark-theme', body.classList.contains('dark-theme') ? 'enabled' : 'disabled');
+            }
+
+            // Check for saved dark mode preference on page load
+            if (localStorage.getItem('dark-theme') === 'enabled') {
+                document.body.classList.add('dark-theme');
+                document.querySelector('#icon').src = 'sun.png';
+            }
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

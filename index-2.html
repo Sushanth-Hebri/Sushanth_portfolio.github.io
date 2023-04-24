@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        About
+    </title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,1,200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+         #insta{
+            height:40px;
+            width:50px;
+        }
+    </style>
+ 
+</head>
+
+<body>
+   
+
+    <div class="grid-container">
+        <header>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#" class="act">About</a></li>
+              <li><a href="index-3.html">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+        <aside>
+            <div class="toggle-aside">
+                <i class="fas fa-chevron-left"></i>
+              </div>
+              <h2>Quick Links</h2>
+             
+
+              <ul>
+               <a href="index-4.html"><li><span class="material-symbols-outlined">
+                school
+                </span>&nbsp;&nbsp;Education</li></a> 
+                    <br><br><br><br>
+
+               <a href="index-5.html"><li><span class="material-symbols-outlined">
+                code
+                </span>&nbsp;&nbsp;Projects</li></a> 
+                <br><br><br><br>
+
+                <a href="index-6.html"><li><span class="material-symbols-outlined">
+                  gallery_thumbnail
+                  </span>&nbsp;&nbsp;Gallery</li></a> 
+              </ul>
+             
+              
+        </aside>
+        <main>
+          <div class="profile">
+               <div class="circle">
+                <img src="WhatsApp_Image_2023-02-04_at_4.14.10_PM-removebg-preview.png" class="hidden"  id="floating-image" alt="Sushanth">
+              
+              </div>
+             
+              </div>
+              <br>
+             
+
+<div class="introduction">
+  <h1 style="text-align: center;">About</h1><br><br><br>
+  <p>
+<b>Hey there! My name is Sushanth</b>
+ and I'm a Web developer.
+
+I've been working in web development for 4 years  and I've had the pleasure of working with a variety of projects, from small portfolio to large  startup<br><br><br><br> I'm passionate about Graphics and animation and I'm always looking for new ways to push the boundaries of what's possible.<br><br><br><br>
+
+When I'm not working, you can usually find me Watching Movies or writing stories. I believe that having a balanced life is key to staying motivated and creative, and I'm always up for trying something new.
+
+Thanks for visiting my portfolio! If you'd like to chat about a project or just want to say hi, feel free to drop me a line.
+  </p>
+
+  <div class="container">
+    
+    <div class="image-container">
+      <img src="twitter.png" alt="Your image">
+      <h2>"Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing." - Pele</h3>
+    </div>
+  </div>
+
+  
+     </div>
+             <div id="mode">
+                <img src="moon.png"  id="icon"  onclick="toggleDarkMode()"alt="moon">
+              </div>
+        </main>
+        <footer>
+            <div class="footer-container">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/your-instagram-account"><img id="insta"src="instagram.png" alt="Instagram"></a>
+                    <a href="mailto:your-email-address"><img src="mail.png" alt="Gmail"></a>
+                    <a href="https://www.twitter.com/your-twitter-account"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="tel:+1234567890"><img src="phone.png" alt="Phone"></a>
+                    <a href="linkededdd"><img src="linkedin.png" alt="linkedin"></a>
+                </div><br>
+               
+            </div>
+            <p>&copy; <b>Sushanth_portfolio.com</b>. All rights reserved.</p>
+        </footer>
+    
+  
+<script>
+    function toggleDarkMode() {
+  const body = document.querySelector('body');
+  const toggle = document.querySelector('#icon');
+
+  body.classList.toggle('dark-theme');
+
+  if (body.classList.contains('dark-theme')) {
+    toggle.src = 'sun.png';
+  } else {
+    toggle.src = 'moon.png';
+  }
+
+  // Store the user's preference in localStorage
+  localStorage.setItem('dark-theme', body.classList.contains('dark-theme') ? 'enabled' : 'disabled');
+}
+
+// Check for saved dark mode preference on page load
+if (localStorage.getItem('dark-theme') === 'enabled') {
+  document.body.classList.add('dark-theme');
+  document.querySelector('#icon').src = 'sun.png';
+}
+
+</script>
+
+        <script>const container = document.querySelector('.container');
+            const content = document.querySelector('.content');
+            const imageContainer = document.querySelector('.image-container');
+            
+            window.addEventListener('scroll', () => {
+              // Get the distance from the top of the container to the top of the viewport
+              const containerTop = container.getBoundingClientRect().top;
+            
+              // Get the height of the viewport
+              const windowHeight = window.innerHeight;
+            
+              // Calculate the position at which the content div becomes visible
+              const visiblePosition = containerTop + windowHeight / 2;
+            
+              if (window.pageYOffset < visiblePosition) {
+                imageContainer.classList.add('visible');
+              } else {
+                imageContainer.classList.remove('visible');
+              }
+            });
+            </script>
+</body>
+
+</html>
