@@ -19,7 +19,7 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 7fr;
-  grid-template-rows: auto 5fr auto;
+  grid-template-rows: 60px auto auto;
   grid-template-areas:
     "header header"
     "aside main"
@@ -29,20 +29,11 @@ body {
 
 
 /* grid container media */
-@media  (max-width: 600px) {
+@media (max-width: 600px) {
   /* your CSS styles for all devices go here */
-    .container {
-      grid-template-areas:
-        "main main"
-        "aside aside";
-      grid-template-columns: 1fr;
-    }
-   aside{
-    display: none;
-   }
 
 
-   #mode {
+  #mode {
     bottom: 50px;
     left: 2px;
     height: 10px;
@@ -52,33 +43,44 @@ body {
     cursor: pointer;
     object-fit: cover;
   }
+}
+
+@media (max-width:600px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "header header"
+
+      "main main"
+      "footer footer";
+    height: 100vh;
   }
 
-  @media (max-width:600px){
-    .grid-container {
-      display: grid;
-      grid-template-columns:1fr;
-      grid-template-rows: 1fr 5fr auto;
-      grid-template-areas:
-        "header header"
-        "aside main"
-        "footer footer";
-      height: 100vh;
-    }
 
+  main {
+    grid-area: main;
+    background-color: var(--primary-color);
+    padding: 20px;
+    margin-top: 100px;
+    margin-left: 50px;
+  }
 
-    main {
-      grid-area: main;
-      background-color: var(--primary-color);
-      padding: 20px;
-      margin-top: 100px;
-      margin-left:50px;
-    }
-    .introduction{
-      width:100%;
-    }
-    }
+  .introduction {
+    width: 100%;
+  }
+  aside {
+    display: none;
+  }
+}
 
+.container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  /* Set a height for the container to allow for scrolling */
+}
 
 p {
   font-size: 22px;
@@ -111,10 +113,69 @@ header {
 }
 
 
+.mobile-only{
+  display:none;
+}
 
 
 
-@media  (max-width: 600px) {
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  /* Show the mobile-only link */
+  .mobile-only {
+    display: inline-block;
+  }
+
+
+  /* Styles for the mobile-only link */
+.mobile-only > a {
+  display: block;
+  padding: 0.5rem;
+  
+  text-decoration: none;
+}
+.mobile-only li{
+  color:white;
+}
+/* Styles for the dropdown menu */
+.mobile-only ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  position: absolute;
+  top: 100%;
+ background-color: #333;
+  border: 1px solid var(--primary-color);
+  max-height: 200px;
+  overflow-y: auto;
+  width: auto;
+}
+.dropdown{
+  color:white;
+}
+
+.mobile-only ul li {
+  padding: 0.5rem;
+  display: block;
+  width: 100%;
+  color:var(--secondary-color);
+}
+
+/* Show the dropdown menu when the link is clicked */
+.mobile-only > a:focus + ul {
+  display: block;
+}
+
+}
+
+@media (max-width: 600px) {
   header {
     flex-wrap: wrap;
     justify-content: center;
@@ -144,6 +205,7 @@ header {
     font-size: 1.5em;
   }
 }
+
 nav {
   display: flex;
   justify-content: flex-end;
@@ -601,12 +663,7 @@ input[type="submit"]:hover {
   bottom: 5px;
 }
 
-.container {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  /* Set a height for the container to allow for scrolling */
-}
+
 
 
 .image-container {
@@ -695,6 +752,7 @@ input[type="submit"]:hover {
 .text-overlay p {
   font-size: 1.5rem;
 }
+
 .card-9 {
   border: 1px solid #4f3d3d;
   border-radius: 5px;
@@ -714,72 +772,78 @@ input[type="submit"]:hover {
   overflow: hidden;
   /* hide the text initially */
 }
-.card-9:hover{
+
+.card-9:hover {
 
   box-shadow: 9px 16px 6px rgba(0, 0, 0, 0.3);
 }
-.card-9-image{
+
+.card-9-image {
   object-fit: contain;
-  height:100%;
-  width:100%;
-}
-.card-9:hover img{
- 
-}
-.mybox{
-position: relative;
+  height: 100%;
+  width: 100%;
 }
 
-.heatbeat{
+.card-9:hover img {}
+
+.mybox {
+  position: relative;
+}
+
+.heatbeat {
   display: inline-block;
 }
-.violet{
-  color:rgb(206, 14, 250);
+
+.violet {
+  color: rgb(206, 14, 250);
 }
+
 .link-symbol {
   position: absolute;
-  top: 10px; /* adjust as needed */
-  right: 10px; /* adjust as needed */
+  top: 10px;
+  /* adjust as needed */
+  right: 10px;
+  /* adjust as needed */
   z-index: 1;
-  height:40px;
-  width:40px;
-  
+  height: 40px;
+  width: 40px;
+
 }
-.explain ul{
-  
-}
-.explain li{
+
+.explain ul {}
+
+.explain li {
   padding-left: 1em;
-			text-indent: -1em;
-			display: list-item;
-			color: var(--secondary-color);
+  text-indent: -1em;
+  display: list-item;
+  color: var(--secondary-color);
 }
+
 .gallery-container {
-	display: flex;
+  display: flex;
 }
 
 .gallery-column {
-	flex: 1;
-	margin: 0 10px;
+  flex: 1;
+  margin: 0 10px;
 }
 
 .gallery-item {
-	width: 100%;
-	margin-bottom: 20px;
-	text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .gallery-item img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .gallery-item h2 {
-	margin-top: 10px;
+  margin-top: 10px;
 }
 
 .gallery-item p {
-	margin-top: 5px;
-	font-style: italic;
+  margin-top: 5px;
+  font-style: italic;
 }
-
