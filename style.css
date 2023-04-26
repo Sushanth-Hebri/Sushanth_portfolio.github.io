@@ -93,6 +93,7 @@ header {
   header {
     flex-wrap: wrap;
     justify-content: center;
+	  height:50px;
   }
 
   nav {
