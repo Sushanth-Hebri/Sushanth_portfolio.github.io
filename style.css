@@ -52,8 +52,18 @@ body {
   }
 }
 
-
-
+@media (max-width:600px){
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 5fr auto;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+  height: 100vh;
+}
+}
 
 p {
   font-size: 22px;
